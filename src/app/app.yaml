@@ -1,4 +1,4 @@
-service: gae-example 
+service: default 
 
 runtime: go
 api_version: go1.9
@@ -6,3 +6,6 @@ api_version: go1.9
 handlers:
 - url: /.*
   script: _go_app
+
+
+

@@ -1,7 +1,11 @@
 package main
 
 import (
+	"jcg-project/controllers"
+	"net/http"
+
 	"github.com/gin-gonic/gin"
+	"google.golang.org/appengine"
 )
 
 func init() {
@@ -13,5 +17,8 @@ func main() {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 
-	router.GET("/", contorollers.helloHandler)
+	router.GET("/hello", controller.HelloHandler)
+
+	http.Handle("/", router)
+	appengine.Main()
 }
